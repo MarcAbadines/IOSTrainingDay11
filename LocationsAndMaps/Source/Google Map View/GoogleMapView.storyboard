@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jpo-WS-jwM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Google Map View-->
+        <scene sceneID="2kV-I1-eoJ">
+            <objects>
+                <viewController id="jpo-WS-jwM" customClass="GoogleMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UYg-UW-KOC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjV-er-PEN" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VjV-er-PEN" secondAttribute="trailing" id="4cW-GU-T9R"/>
+                            <constraint firstItem="VjV-er-PEN" firstAttribute="top" secondItem="aBt-54-HsO" secondAttribute="top" id="5dM-Py-ADE"/>
+                            <constraint firstItem="aBt-54-HsO" firstAttribute="bottom" secondItem="VjV-er-PEN" secondAttribute="bottom" id="G8e-9X-N6b"/>
+                            <constraint firstItem="VjV-er-PEN" firstAttribute="leading" secondItem="aBt-54-HsO" secondAttribute="leading" id="MiQ-r2-e6s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aBt-54-HsO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Google Map View" id="GwJ-rr-Z4i">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="VjV-er-PEN" id="gI5-95-tP8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKf-dt-GVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="148"/>
+        </scene>
+    </scenes>
+</document>
