@@ -8,8 +8,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "Delegates.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <TabViewControllerDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
@@ -17,4 +18,3 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
-

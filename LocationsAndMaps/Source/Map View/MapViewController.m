@@ -49,6 +49,7 @@
     point.subtitle = @"I'm here!!!";
     
     [self.mapView addAnnotation:point];
+    [_delegate didChangeLocation:aUserLocation.location];
 }
 
 @end

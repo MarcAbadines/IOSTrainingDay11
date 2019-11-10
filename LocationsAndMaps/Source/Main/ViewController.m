@@ -6,6 +6,8 @@
 //
 
 #import "ViewController.h"
+#include "GoogleMapViewController.h"
+#include "MapViewController.h"
 
 NSString *const tabControllerSegue = @"tabControllerSegue";
 
@@ -20,6 +22,19 @@ NSString *const tabControllerSegue = @"tabControllerSegue";
     [super viewDidLoad];
     
     [self startLocationService];
+    [self checkLocationAccess];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:tabControllerSegue]) {
+        UITabBarController *tab = [segue destinationViewController];
+        GoogleMapViewController *gmv = tab.viewControllers[1];
+        gmv.delegate = self;
+        
+        MapViewController *mv = tab.viewControllers[0];
+        mv.delegate = self;
+        
+    }
 }
 
 // Mark - Functions
@@ -38,7 +53,25 @@ NSString *const tabControllerSegue = @"tabControllerSegue";
     _altitude.text = [NSString stringWithFormat:@"%.0f m",location.altitude];
 }
 
+
+- (void)checkLocationAccess {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    switch (status) {
+        case kCLAuthorizationStatusDenied:
+            break;
+        case kCLAuthorizationStatusRestricted:
+            break;
+        case kCLAuthorizationStatusNotDetermined:
+            [_locationManager requestWhenInUseAuthorization];
+        case kCLAuthorizationStatusAuthorizedAlways:
+            break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            break;
+    }
+}
+
 - (void)startLocationService {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     if (_locationManager == nil) {
         _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
         _locationManager.delegate = self; // we set the delegate of locationManager to self.
@@ -49,7 +82,8 @@ NSString *const tabControllerSegue = @"tabControllerSegue";
 
 // Mark - LocationManager Delegate
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    [self showTitle:@"Error" withMessage:@"There was an error retrieving your location"];
+    NSString * msg = [NSString stringWithFormat:@"There was an error retrieving your location/%@", error.localizedDescription];
+    [self showTitle:@"Error" withMessage:msg];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -58,5 +92,8 @@ NSString *const tabControllerSegue = @"tabControllerSegue";
     [self displayLocationDetails:crnLoc];
 }
 
-
+// Mark - TabViewControllerDelegate
+- (void)didChangeLocation:(CLLocation *)location {
+    [self displayLocationDetails:location];
+}
 @end

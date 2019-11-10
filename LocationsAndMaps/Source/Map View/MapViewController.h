@@ -7,10 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#include "Delegates.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) id <TabViewControllerDelegate> delegate;
 
 @end
-

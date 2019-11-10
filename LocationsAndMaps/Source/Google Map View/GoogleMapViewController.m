@@ -9,10 +9,6 @@
 
 const float zoom = 6.0f;
 
-@interface GoogleMapViewController ()
-
-@end
-
 @implementation GoogleMapViewController
 
 // Mark - Overrides
@@ -54,7 +50,9 @@ const float zoom = 6.0f;
         _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
         _locationManager.delegate = self; // we set the delegate of locationManager to self.
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+        [_locationManager requestLocation];
         [_locationManager startUpdatingLocation];  //requesting location updates
+        
     }
 }
 
@@ -65,13 +63,17 @@ const float zoom = 6.0f;
 }
 
 // Mark - LocationManager Delegate
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSString * msg = [NSString stringWithFormat:@"There was an error retrieving your location/%@", error.localizedDescription];
+    [self showTitle:@"Error" withMessage:msg];
+}
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *crnLoc = [locations lastObject];
     [self centerToLocation:crnLoc];
+    [_delegate didChangeLocation:crnLoc];
 }
-
 
 @end
 

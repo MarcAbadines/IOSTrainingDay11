@@ -18,33 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [GMSServices provideAPIKey:@"AIzaSyDKm1bbCG9YO3uVeuJyZpHRt34HbBRsaSg"];
-    [self checkLocationAccess];
+
     return YES;
 }
 
-- (void)checkLocationAccess {
-    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-    switch (status) {
-        case kCLAuthorizationStatusDenied:
-            break;
-        case kCLAuthorizationStatusRestricted:
-            break;
-        case kCLAuthorizationStatusNotDetermined:
-            [self requestForLocationAuth];
-        case kCLAuthorizationStatusAuthorizedAlways:
-            break;
-        case kCLAuthorizationStatusAuthorizedWhenInUse:
-            break;
-    }
-}
-
-- (void)requestForLocationAuth {
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
-    [locationManager startUpdatingLocation];  //requesting location updates
-    [locationManager requestWhenInUseAuthorization];
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

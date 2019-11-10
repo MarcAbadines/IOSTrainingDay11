@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NWt-qk-xGO">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kq8-sX-1OD">
+            <objects>
+                <viewController id="NWt-qk-xGO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ye0-LJ-vXP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-0V-1b7">
+                                <rect key="frame" x="24" y="410.5" width="366" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location and Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgW-Yu-rxv">
+                                        <rect key="frame" x="90.5" y="0.0" width="185" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46o-gV-pxD">
+                                        <rect key="frame" x="166" y="45" width="34" height="30"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <segue destination="NKj-TQ-f9G" kind="show" id="jEk-nQ-Vru"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BSa-0V-1b7" firstAttribute="leading" secondItem="ji8-AV-YMM" secondAttribute="leading" constant="24" id="jhI-uS-9t7"/>
+                            <constraint firstItem="BSa-0V-1b7" firstAttribute="centerY" secondItem="ye0-LJ-vXP" secondAttribute="centerY" id="ptX-tK-qAS"/>
+                            <constraint firstItem="ji8-AV-YMM" firstAttribute="trailing" secondItem="BSa-0V-1b7" secondAttribute="trailing" constant="24" id="vTp-wN-Kqf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ji8-AV-YMM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gth-eF-IrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Vsu-dA-Sk0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="NKj-TQ-f9G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wix-Uv-mIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="56"/>
+        </scene>
+    </scenes>
+</document>

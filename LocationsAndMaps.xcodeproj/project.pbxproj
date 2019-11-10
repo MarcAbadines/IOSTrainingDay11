@@ -11,6 +11,7 @@
 		3D71D9ED237845A300E06493 /* GoogleMapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D71D9EC237845A300E06493 /* GoogleMapView.storyboard */; };
 		3D71D9EF2378461A00E06493 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D71D9EE2378461A00E06493 /* MapViewController.m */; };
 		3D71D9F3237847D300E06493 /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D71D9F2237847D300E06493 /* GoogleMapViewController.m */; };
+		3D71D9FD2378681A00E06493 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D71D9FC2378681A00E06493 /* Home.storyboard */; };
 		3D7A2DB523780563000043E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7A2DB423780563000043E1 /* AppDelegate.m */; };
 		3D7A2DB823780563000043E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7A2DB723780563000043E1 /* ViewController.m */; };
 		3D7A2DBB23780563000043E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7A2DB923780563000043E1 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		3D71D9F02378463600E06493 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		3D71D9F12378478000E06493 /* GoogleMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleMapViewController.h; sourceTree = "<group>"; };
 		3D71D9F2237847D300E06493 /* GoogleMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleMapViewController.m; sourceTree = "<group>"; };
+		3D71D9FA237860EB00E06493 /* Delegates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Delegates.h; sourceTree = "<group>"; };
+		3D71D9FC2378681A00E06493 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3D7A2DB023780563000043E1 /* LocationsAndMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationsAndMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7A2DB323780563000043E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D7A2DB423780563000043E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,11 +105,29 @@
 		3D71D9F52378519700E06493 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3D71D9FB2378680400E06493 /* Home */,
+				3D71D9F623785D0A00E06493 /* Delegate */,
 				3D71D9EB2378459500E06493 /* Google Map View */,
 				3D71D9E82378454A00E06493 /* Map View */,
 				3D71D9F42378518D00E06493 /* Main */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		3D71D9F623785D0A00E06493 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3D71D9FA237860EB00E06493 /* Delegates.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		3D71D9FB2378680400E06493 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D71D9FC2378681A00E06493 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		3D7A2DA723780563000043E1 = {
@@ -212,6 +233,7 @@
 				3D7A2DC023780566000043E1 /* LaunchScreen.storyboard in Resources */,
 				3D71D9ED237845A300E06493 /* GoogleMapView.storyboard in Resources */,
 				3D7A2DBD23780566000043E1 /* Assets.xcassets in Resources */,
+				3D71D9FD2378681A00E06493 /* Home.storyboard in Resources */,
 				3D71D9EA2378456C00E06493 /* MapView.storyboard in Resources */,
 				3D7A2DBB23780563000043E1 /* Main.storyboard in Resources */,
 			);
