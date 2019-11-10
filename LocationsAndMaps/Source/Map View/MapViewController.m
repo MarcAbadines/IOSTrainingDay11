@@ -43,12 +43,12 @@
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
     
     // Add an annotations
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = aUserLocation.coordinate;
-    point.title = @"Where am I?";
-    point.subtitle = @"I'm here!!!";
+//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+//    point.coordinate = aUserLocation.coordinate;
+//    point.title = @"Where am I?";
+//    point.subtitle = @"I'm here!!!";
     
-    [self.mapView addAnnotation:point];
+//    [self.mapView addAnnotation:point];
     [_delegate didChangeLocation:aUserLocation.location];
 }
 

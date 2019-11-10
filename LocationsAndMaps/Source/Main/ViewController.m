@@ -71,7 +71,6 @@ NSString *const tabControllerSegue = @"tabControllerSegue";
 }
 
 - (void)startLocationService {
-    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     if (_locationManager == nil) {
         _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
         _locationManager.delegate = self; // we set the delegate of locationManager to self.

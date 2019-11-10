@@ -7,7 +7,7 @@
 
 #import "GoogleMapViewController.h"
 
-const float zoom = 6.0f;
+const float zoom = 15.0f;
 
 @implementation GoogleMapViewController
 
@@ -32,6 +32,7 @@ const float zoom = 6.0f;
 - (void)setupMap {
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86 longitude:151.20 zoom:zoom];
     _mapView.camera = camera;
+    _mapView.myLocationEnabled = YES;
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
